@@ -1,0 +1,420 @@
+/* Estilos globales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #fafafa; /* Fondo claro para el body */
+    color: #333;
+}
+
+header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+}
+
+/* Mover el logo más a la izquierda */
+.logo {
+    margin-left: 0; /* Eliminamos cualquier margen izquierdo */
+}
+
+.logo img {
+    height: 65px;
+}
+
+/* Selector de idioma */
+.language-selector {
+    margin-left: 20px; /* Espacio entre el logo y el selector de idioma */
+}
+
+.language-selector label {
+    font-size: 14px;
+    margin-right: 5px;
+    color: #333;
+}
+
+.language-selector select {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    font-size: 14px;
+}
+
+/* Navbar */
+.navbar {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    justify-content: flex-end;
+    flex-wrap: nowrap; /* Asegura que las opciones estén en una sola línea */
+    gap: 20px; /* Añadido espacio entre los elementos */
+}
+
+.navbar li {
+    margin: 0;
+}
+
+.navbar a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #007bff;
+}
+
+/* Estilos para el menú responsive */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    height: 3px;
+    width: 25px;
+    background-color: #333;
+    margin: 4px 0;
+}
+
+/* Menú móvil */
+.menu-toggle {
+    display: none; /* El botón hamburguesa está oculto en pantallas grandes por defecto */
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    background-color: #333; /* Color claro para las barras del botón */
+    border-radius: 3px;
+}
+
+/* Estilo para cuando el menú se activa (en pantallas pequeñas) */
+.navbar.active {
+    display: flex; /* Mostrar el menú cuando se activa */
+    width: 100%;
+    flex-direction: column;
+}
+
+/* Estilos para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background-color: #ffffff;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        flex-wrap: nowrap; /* Asegura que no se apilen en dos líneas */
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .navbar li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: flex;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 1000; /* Asegura que el botón esté encima de otros elementos */
+    }
+
+    /* Mover el botón hamburguesa debajo del selector de idioma */
+    .language-selector {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 500; /* Asegura que el selector de idioma esté encima del botón hamburguesa */
+    }
+
+    .menu-toggle {
+        position: absolute;
+        top: 60px; /* Ajuste la posición para que esté debajo del selector de idioma */
+        right: 20px;
+    }
+
+    .news-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .news-card {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* Estilo del footer */
+footer {
+    background-color: #222; /* Fondo oscuro para el footer */
+    color: #fff;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 50px;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+/* Contenido principal */
+main {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Sección Home */
+#home {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+#home h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+/* Sección About LAENOG */
+#about {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+#about h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+/* Sección News & Events */
+#news-events {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.news-container {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.news-card {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    width: 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.news-card img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.news-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.news-card .read-more {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Sección Newsletter */
+#newsletter {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.newsletter-form label {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.newsletter-form input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.newsletter-form button {
+    padding: 10px;
+    background-color: #222; /* Fondo oscuro para el botón */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.newsletter-form button:hover {
+    background-color: #555;
+}
+
+/* Estilo para el enlace de "Ver más noticias" */
+.more-news {
+    display: block;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+}
+
+.more-news:hover {
+    color: #0056b3;
+}
+
+/* Estilos para el footer (específicos) */
+/* Estilos para el footer (específicos) */
+footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: nowrap; /* Asegura que todo esté en una sola fila */
+}
+
+footer .logoFooter img {
+    width: 200px; /* Hacemos el logo más grande */
+    height: auto;
+}
+
+footer .google-map iframe {
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    border-radius: 8px;
+}
+
+footer .footer-links {
+    display: flex;
+    flex-direction: row; /* Alineamos los enlaces horizontalmente */
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Espacio entre los enlaces */
+}
+
+footer .footer-links .footer-link {
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer .footer-links .footer-link:hover {
+    color: #007bff;
+}
+
+footer .footer-contact {
+    display: flex;
+    flex-direction: row; /* Alineamos los contactos horizontalmente */
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Espacio entre los íconos de contacto */
+}
+
+footer .footer-contact h3 {
+    font-size: 18px;
+    margin-right: 20px; /* Espacio entre el título y los íconos */
+}
+
+footer .footer-contact ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer .footer-contact li {
+    margin: 8px 0;
+}
+
+footer .footer-contact a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+footer .footer-contact a:hover {
+    color: #007bff;
+}
+
+footer .social-icon {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+}
+
+footer .social-icon i {
+    font-size: 20px; /* Tamaño de los iconos */
+    transition: color 0.3s ease;
+}
+
+footer .social-icon:hover i {
+    color: #007bff;
+}
+
+footer .footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+footer .footer-bottom p {
+    margin: 0;
+}
