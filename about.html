@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAENOG Project</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header con logo, navbar y selector de idioma -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="IMG/esn_logo.png" alt="ESN Logo">
+            </div>
+            <nav>
+                <ul class="navbar">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About LAENOG</a></li>
+                    <li><a href="activities.html">Activities & WPs</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="#news">News & Events</a></li>
+                    <li><a href="#partners">Partners</a></li>
+                    <li><a href="#consortium">Consortium</a></li>
+                    <li><a href="#newsletter">Newsletter</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+
+            <!-- Selector de idioma fuera del navbar -->
+            <div class="language-selector">
+                <select name="language" id="language-select">
+                    <option value="es">Español</option>
+                    <option value="en">English</option>
+                    <option value="pt">Português</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main>
+        <section id="home" class="section">
+            <h1>Welcome to LAENOG</h1>
+            <p>Project overview and highlights...</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 LAENOG. All rights reserved.</p>
+    </footer>
+
+    <!-- Script para el menú responsive -->
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navbar = document.querySelector('.navbar');
+
+        mobileMenu.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
+
+        // Script para cambiar el idioma (esto es solo de demostración)
+        document.getElementById('language-select').addEventListener('change', (event) => {
+            const selectedLang = event.target.value;
+            console.log("Idioma seleccionado: ", selectedLang);
+            // Aquí podrías agregar una lógica para cargar contenido traducido según el idioma seleccionado
+        });
+    </script>
+</body>
+</html>
